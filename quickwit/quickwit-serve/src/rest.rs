@@ -72,6 +72,7 @@ pub(crate) async fn start_rest_server(
         ))
         .or(index_management_handlers(
             quickwit_services.index_service.clone(),
+            quickwit_services.indexer_service.clone(),
         ))
         .or(delete_task_api_handlers(
             quickwit_services.metastore.clone(),
